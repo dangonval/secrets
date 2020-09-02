@@ -1,0 +1,6 @@
++----------+------------------------+--------------------------------+
+| name     | username               | secretPasswords                |
++----------+------------------------+--------------------------------+
+| Service1 | foo (Some description) | someSecret1 (Some description) |
+| Service2 | bar (Some description) | someSecret2 (Whatever)         |
++----------+------------------------+--------------------------------+

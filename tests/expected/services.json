@@ -1,0 +1,68 @@
+[
+  {
+    "company": "company1",
+    "owner": "",
+    "customer": "",
+    "tags": "tag1,tag2",
+    "country": "",
+    "url": "http://something.com",
+    "name": "Service1",
+    "created": "",
+    "updated": "20. Jun. 2011",
+    "status": "",
+    "usernameId": "AA01",
+    "userDescription": "Some description",
+    "pwdId": "XX01",
+    "pwdDescriptions": "Some description",
+    "questions": [
+      {
+        "question": "Are you there?",
+        "answerId": "AW01",
+        "answer": "AW01"
+      }
+    ],
+    "description": "someDescription",
+    "dateChange": "",
+    "username": "AA01",
+    "secretPasswords": [
+      {
+        "passwordId": "XX01",
+        "password": "XX01",
+        "description": "Some description"
+      }
+    ]
+  },
+  {
+    "company": "company2",
+    "owner": "",
+    "customer": "",
+    "tags": "",
+    "country": "",
+    "url": "http://whaever.com",
+    "name": "Service2",
+    "created": "",
+    "updated": "",
+    "status": "",
+    "usernameId": "AA02",
+    "userDescription": "Some description",
+    "pwdId": "XX02",
+    "pwdDescriptions": "",
+    "questions": [
+      {
+        "question": "Is this blue?",
+        "answerId": "AW02",
+        "answer": "AW02"
+      }
+    ],
+    "description": "someDescription",
+    "dateChange": "",
+    "username": "AA02",
+    "secretPasswords": [
+      {
+        "passwordId": "XX02",
+        "password": "XX02",
+        "description": "Whatever"
+      }
+    ]
+  }
+]

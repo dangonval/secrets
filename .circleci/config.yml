@@ -1,0 +1,20 @@
+version: 2.1
+
+orbs:
+  python: circleci/python@0.2.1
+
+jobs:
+  build-and-test:
+    executor: python/default
+    steps:
+      - checkout
+      - run:
+          command: |
+            pip install tox-pipenv==1.5.0  # TODO: newer tox-pipenv versions are having trouble
+            sudo apt install emacs  # emacs is needed to process the .org files
+            tox
+
+workflows:
+  main:
+    jobs:
+      - build-and-test

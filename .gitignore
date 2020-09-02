@@ -1,0 +1,13 @@
+*~
+/docs/build/
+/tests/tmp/
+/.idea/
+/.tox/
+/htmlcov/
+
+/Makefile
+/Pipfile.lock
+/.coverage
+/.python-version
+
+__pycache__/
