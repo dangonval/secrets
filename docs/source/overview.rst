@@ -18,6 +18,9 @@ It works in two modes:
 - offers an interface to search for services, resolving ``usernames`` and ``passwords``
   from the ``secrets`` database.
 
+The data is backed by a storage backend. Currently the only storage backend are plain json files,
+protected with a key. There are plans to implement other storage backends.
+
 Generate and save encryption key
 --------------------------------
 

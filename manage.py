@@ -4,7 +4,7 @@ import csv
 
 import click
 
-from secrets import Services, as_pretty_table, get_key, encrypt_with_keyfile
+from secrets import Services, as_pretty_table, get_key, encrypt_with_keyfile, JsonBackend
 
 KEYS_FOR_COMPACT = ['name', 'username', 'secretPasswords']
 
@@ -132,7 +132,9 @@ def list_services(services, secrets, resolve, regex, style, mode, keys, keyfile)
     keys = keys.split(',') if keys else keys
     if not keys and mode == 'compact':
         keys = KEYS_FOR_COMPACT
-    result = Services(services, secrets, mode, keys, keyfile).search(regex, resolve)
+    services = JsonBackend(services, keyfile)
+    secrets = JsonBackend(secrets, keyfile)
+    result = Services(services, secrets, mode, keys).search(regex, resolve)
     print_data(result, style)
 
 

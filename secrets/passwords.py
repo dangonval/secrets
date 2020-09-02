@@ -1,18 +1,16 @@
-from .utils import load_json
-
-
-class UnkownPasswordId(Exception):
+class UnkownSecretId(Exception):
     pass
 
 
 class Passwords:
 
-    def __init__(self, secrets, keyfile=None):
-        self._passwords = load_json(secrets, keyfile)
+    def __init__(self, secrets):
+        self._secrets = secrets
 
-    def get(self, password_id):
-        if not password_id:
+    def get(self, secret_id):
+        if not secret_id:
             return None
-        if password_id not in self._passwords:
-            raise UnkownPasswordId(f'Password ID "{password_id}" is not defined')
-        return self._passwords[password_id]
+        secrets = self._secrets.all_data
+        if secret_id not in secrets:
+            raise UnkownSecretId(f'Secret ID "{secret_id}" is not defined')
+        return secrets[secret_id]

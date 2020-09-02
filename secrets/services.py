@@ -1,14 +1,14 @@
 from copy import deepcopy
 
 from .passwords import Passwords
-from .utils import matches, select_keys, load_json
+from .utils import matches, select_keys
 
 
 class Services:
 
-    def __init__(self, json_file, secrets, mode, keys=None, keyfile=None):
-        self._services = load_json(json_file, keyfile)
-        self._passwords = Passwords(secrets, keyfile)
+    def __init__(self, services, secrets, mode, keys=None):
+        self._services = services
+        self._passwords = Passwords(secrets)
         self._mode = mode
         self._keys = keys
 
@@ -60,7 +60,8 @@ class Services:
         return [select_keys(service, self._keys) for service in services]
 
     def search(self, regex=None, resolve=False):
-        services = self._resolve(self._services) if resolve else self._services
+        services = self._services.all_data
+        services = self._resolve(services) if resolve else services
         services = self._compact(services)
         services = self._apply_regex(services, regex)
         services = self._select_keys(services)
